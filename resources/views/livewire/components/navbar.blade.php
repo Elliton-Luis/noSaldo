@@ -10,19 +10,19 @@
         <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-200 rounded-box z-10 mt-3 w-40 p-1 shadow">
           <li>
             <a class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
-              <i class="bi bi-house-door-fill text-lg"></i>
+              <i class="bi bi-bag-plus-fill text-lg"></i>
               <span>Entradas</span>
             </a>
           </li>
           <li>
             <a class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
-              <i class="bi bi-briefcase-fill text-lg"></i>
+              <i class="bi bi-bag-dash-fill text-lg"></i>
               <span>Saidas</span>
             </a>
           </li>
           <li>
             <a class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
-              <i class="bi bi-info-circle-fill text-lg"></i>
+              <i class="bi bi-award-fill text-lg"></i>
               <span>Metas</span>
             </a>
           </li>
