@@ -30,6 +30,9 @@
                     <span class="label-text">Email</span>
                     </label>
                     <input type="email" placeholder="your@email.com" class="input input-bordered" name="email" />
+                    @error('email')
+                        <small>{{$message}}</small>
+                    @enderror
                 </div>
 
                 <div class="form-control mb-6">
@@ -37,6 +40,9 @@
                     <span class="label-text">Password</span>
                     </label>
                     <input type="password" placeholder="••••••••" class="input input-bordered" name="password"/>
+                    @error('password')
+                        <small>{{$message}}</small>
+                    @enderror
                 </div>
 
                 <button type="submit" class="btn btn-primary w-full">Login</button>

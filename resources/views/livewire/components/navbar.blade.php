@@ -34,9 +34,29 @@
       <a class="btn btn-ghost text-lg p-1">NoSaldo</a>
     </div>
 
-    <div class="navbar-end space-x-2 text-sm">
-      <span class="font-bold">User</span>
-      <i class="bi bi-box-arrow-in-right text-lg"></i>
+    <div class="navbar-end space-x-2 text-sm md:text-lg">
+        <div class="navbar-end space-x-2 text-sm md:text-lg">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle btn-md p-1">
+                {{ auth()->user()->name }}
+                </div>
+
+                <ul tabindex="0"class="menu menu-sm dropdown-content bg-base-200 rounded-box z-10 mt-3 w-40 p-1 shadow">
+                <li>
+                    <a class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
+                    <i class="bi bi-person text-lg"></i>
+                    <span>Usuário</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded" href="{{route('login.logout')}}">
+                    <i class="bi bi-box-arrow-in-left text-lg"></i>
+                    <span>Sair</span>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
     </div>
   </div>
 </div>

@@ -6,13 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class loginController extends Controller
+class LoginController extends Controller
 {
-    public function showLogin(){
-        return view('login.index');
-    }
-
-    public function loginUser(Request $request){
+    public function authUser(Request $request){
 
         $request->validate([
             'email'=>'required|email|exists:users,email',
@@ -32,5 +28,12 @@ class loginController extends Controller
             return redirect()->back()->with('error','Credenciais Inválidas!!');
         }
         return redirect()->route('lobby')->with('success','Usuário Logado Com Sucesso!!');
+    }
+
+    public function logoutUser(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login.index')->with('success','Sessão Finalizada com sucesso');
     }
 }

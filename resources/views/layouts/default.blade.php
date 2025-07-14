@@ -13,6 +13,39 @@
 
     @yield('content')
     
+    @if(Session::has('error'))
+    <div id="toast-error" class="toast">
+        <div class="alert alert-error">
+            <span>{{ Session('error') }}</span>
+        </div>
+    </div>
+
+    <script>
+        const toast = document.getElementById('toast-error');
+
+        setTimeout(() => {
+            toast.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+        }, 3000);
+    </script>
+    @endif
+
+
+    @if(Session::has('success'))
+    <div id="toast-success" class="toast">
+        <div class="alert alert-success">
+            <span>{{ Session('success') }}</span>
+        </div>
+    </div>
+
+    <script>
+        const toast = document.getElementById('toast-success');
+
+        setTimeout(() => {
+            toast.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+        }, 3000);
+    </script>
+    @endif
+
     @livewireScripts
 </body>
 </html>
