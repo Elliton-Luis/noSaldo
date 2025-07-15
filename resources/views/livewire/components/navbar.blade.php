@@ -9,7 +9,7 @@
         </div>
         <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-200 rounded-box z-10 mt-3 w-40 p-1 shadow">
           <li>
-            <a class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
+            <a href="{{route('income.index')}}" class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
               <i class="bi bi-bag-plus-fill text-lg"></i>
               <span>Entradas</span>
             </a>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="navbar-center">
-      <a class="btn btn-ghost text-lg p-1">NoSaldo</a>
+      <a href="{{route('lobby')}}" class="btn btn-ghost text-lg p-1">NoSaldo</a>
     </div>
 
     <div class="navbar-end space-x-2 text-sm md:text-lg">

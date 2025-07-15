@@ -10,9 +10,12 @@
     @livewireStyles
 </head>
 <body>
+    <livewire:components.navbar/>
 
-    @yield('content')
-    
+    <div class="bg-gray-800">
+        @yield('content')
+    </div>
+
     @if(Session::has('error'))
     <div id="toast-error" class="toast">
         <div class="alert alert-error">
