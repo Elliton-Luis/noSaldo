@@ -14,6 +14,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained('categories','id')->onDelete('cascade');
             $table->string('description');
             $table->decimal('value',8,2);
+            $table->enum('type', ['recurring', 'sporadic'])->default('sporadic');
             $table->date('date')->now();
             $table->timestamps();
         });
