@@ -11,13 +11,13 @@
           <li>
             <a href="{{route('income.index')}}" class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
               <i class="bi bi-bag-plus-fill text-lg"></i>
-              <span>Entradas</span>
+              <span>Receitas</span>
             </a>
           </li>
           <li>
             <a class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
               <i class="bi bi-bag-dash-fill text-lg"></i>
-              <span>Saidas</span>
+              <span>Despesas</span>
             </a>
           </li>
           <li>
