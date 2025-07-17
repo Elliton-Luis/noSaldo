@@ -33,7 +33,7 @@ class FormCreateIncome extends Component
     public function storeIncome(){
         Income::create([
             "user_id" =>auth()->user()->id,
-            "category_id" => 1,
+            "category_id" => $this->category,
             "description" =>$this->description,
             "value" => $this->value,
             "type"=> $this->type,

@@ -32,7 +32,7 @@
                 </label>
                     <div class="flex gap-2">
                         <select class="select select-bordered flex-1" wire:model="type">
-                        <option disabled selected>Selecione um tipo</option>
+                        <option value="null" disabled selected>Selecione um tipo</option>
                         <option value="sporadic">Esporádico</option>
                         <option value="recurring">Recorrente</option>
                         </select>
@@ -45,8 +45,8 @@
                     <span class="label-text">Categoria</span>
                 </label>
                     <div class="flex gap-2">
-                        <select class="select select-bordered flex-1" wire:model="category">
-                        <option disabled selected>Selecione uma Categoria</option>
+                        <select required class="select select-bordered flex-1" wire:model="category">
+                        <option value="null" disabled selected>Selecione uma Categoria</option>
                         @forelse ($categories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
                         @empty
@@ -66,12 +66,6 @@
 
     <dialog id="my_modal" class="modal">
         <div class="modal-box p-6 space-y-4 w-80 p-6 bg-base-100 shadow-xl rounded-xl">
-            @if(Session::has('successCategory'))
-                <div role="alert" id="successCategory" class="alert alert-success my-5">
-                    <i class="bi bi-check-circle"></i>
-                    <span>{{ Session('successCategory') }}</span>
-                </div>
-            @endif
             <h3 class="text-lg font-semibold text-slate-800 mb-4 text-center text-white">Cadastrar Categoria</h3>
 
             <div class="mt-6 form-control mb-3">
@@ -88,7 +82,7 @@
                 <span class="label-text text-slate-600 font-bold text-white">Tipo</span>
             </label>
             <select class="select select-bordered border-slate-500 focus:border-primary focus:ring-0" wire:model="categoryType">
-                <option disabled selected>Selecione o Tipo da Categoria</option>
+                <option value="null" disabled selected>Selecione o Tipo da Categoria</option>
                 <option value="income">Receita</option>
                 <option value="expense">Despesa</option>
                 <option value="both">Ambos</option>
@@ -96,8 +90,8 @@
             </div>
 
             <div class="modal-action mt-6">
-                <button type="submit" class="btn bg-red-500 shadow-lg" onclick="document.getElementById('my_modal').close()">Fechar</button>
-                <button type="submit" class="btn bg-teal-700 shadow-lg" wire:click="storeCategory()">Salvar</button>
+                <button class="btn bg-red-500 shadow-lg" onclick="document.getElementById('my_modal').close()">Fechar</button>
+                <button class="btn bg-teal-700 shadow-lg" wire:click="storeCategory()" onclick="document.getElementById('my_modal').close()">Salvar</button>
             </div>
         </div>
     </dialog>
