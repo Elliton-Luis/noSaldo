@@ -13,7 +13,7 @@ Route::get('/lobby', function (){
 })->name('lobby');
 
 Route::post('/auth', [LoginController::class,'authUser'])->name('login.auth');
-Route::post('/logout', [LoginController::class,'logoutUser'])->name('login.logout');
+Route::get('/logout', [LoginController::class,'logoutUser'])->name('login.logout');
 
 Route::prefix('/entrada')->group( function(){
     Route::get('/',[IncomeController::class,'showIncome'])->name('income.index');
