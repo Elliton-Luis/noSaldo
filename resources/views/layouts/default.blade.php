@@ -12,6 +12,7 @@
 <body>
     <livewire:components.navbar/>
     <livewire:incomes.form-create-income />
+    <livewire:expenses.form-create-expense />
 
     <div class="bg-gray-800">
         @yield('content')

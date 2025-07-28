@@ -34,10 +34,17 @@
                         <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-32 p-2 shadow-sm">
                             <li class="h-10 w-full"><a class="btn btn-ghost btn-primary h-full justify-start"
                                     onclick="income_modal.showModal()">
-                                    <i class="bi bi-cone-striped"></i>
+                                    <i class="bi bi-wallet-fill"></i>
                                     Receita
-                                </a></li>
-                            <li><a>Item 2</a></li>
+                                </a>
+                            </li>
+
+                            <li class="h-10 w-full"><a class="btn btn-ghost btn-primary h-full justify-start"
+                                    onclick="expense_modal.showModal()">
+                                    <i class="bi bi-basket2-fill"></i>
+                                    Gasto
+                                </a>
+                            </li>
                         </ul>
                     </details>
                 </li>
@@ -105,15 +112,22 @@
                         <hr>
                         <li>
                             <details class="dropdown">
-                                <summary class="btn btn-ghost btn-primary mt-2 text-base w-full"><i class="bi bi-plus-square"></i>Criar
+                                <summary class="btn btn-ghost btn-primary mt-2 text-base w-full"><i
+                                        class="bi bi-plus-square"></i>Criar
                                 </summary>
                                 <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-32 p-2 shadow-sm">
-                                    <li class="h-10 w-full"><a class="btn btn-ghost btn-primary h-full justify-start text-base"
+                                    <li class="h-10 w-full"><a
+                                            class="btn btn-ghost btn-primary h-full justify-start text-base"
                                             onclick="income_modal.showModal()">
                                             <i class="bi bi-cone-striped"></i>
                                             Receita
                                         </a></li>
-                                    <li><a>Item 2</a></li>
+                                    <li class="h-10 w-full"><a
+                                            class="btn btn-ghost btn-primary h-full justify-start text-base"
+                                            onclick="expense_modal.showModal()">
+                                            <i class="bi bi-cone-striped"></i>
+                                            Gasto
+                                        </a></li>
                                 </ul>
                             </details>
                         </li>
