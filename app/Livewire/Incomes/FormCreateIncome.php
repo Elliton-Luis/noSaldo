@@ -39,6 +39,7 @@ class FormCreateIncome extends Component
             "type"=> $this->type,
             "date" => date('Y-m-d')
         ]);
+        $this->reset();
         return session()->flash('successIncome','Entrada Cadastrada Com Sucesso!!');
     }
 
