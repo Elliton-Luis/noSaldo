@@ -24,7 +24,6 @@ class FormCreateIncome extends Component
     #[Validate('required',message:'É necessário preencher esse campo')]
     public $type;
 
-
     public function mount(){
         $this->description = null;
         $this->value = null;
@@ -56,6 +55,7 @@ class FormCreateIncome extends Component
     #[On('storeCategory')]
     public function getCategories(){
         $query = Category::query();
+        $query->where('type','income')->orWhere('type','both');
         return $query->get();
     }
 }
