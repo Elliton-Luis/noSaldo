@@ -9,6 +9,6 @@
 @section('content')
 
 <div class="min-h-screen flex justify-center items-center align-center">
-    <livewire:incomes.form-create-income/>
+    
 </div>
 @endsection
