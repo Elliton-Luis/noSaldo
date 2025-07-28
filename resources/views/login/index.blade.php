@@ -31,7 +31,7 @@
                     </label>
                     <input type="email" placeholder="your@email.com" class="input input-bordered" name="email" />
                     @error('email')
-                        <small>{{$message}}</small>
+                        <small class="text-error">{{$message}}</small>
                     @enderror
                 </div>
 
