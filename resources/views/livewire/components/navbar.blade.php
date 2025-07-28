@@ -1,5 +1,6 @@
 <div class="z-50">
-    <div class="hidden md:fixed md:top-0 md:left-0 md:h-screen md:w-40 md:bg-base-300 md:text-primary-content md:shadow-lg md:p-4 md:flex md:flex-col md:justify-between md:z-50">
+    <div
+        class="hidden md:fixed md:top-0 md:left-0 md:h-screen md:w-40 md:bg-base-300 md:text-primary-content md:shadow-lg md:p-4 md:flex md:flex-col md:justify-between md:z-50">
         <div>
             <div class="text-center text-lg font-bold mb-4">
                 <a href="{{ route('lobby') }}" class="btn btn-ghost w-full">NoSaldo</a>
@@ -26,11 +27,19 @@
                         <span>Metas</span>
                     </a>
                 </li>
-                <li class="dropdown dropdown-right">
-                    <a class="btn btn-ghost w-full h-full justify-start" onclick="income_modal.showModal()">
-                        <i class="bi bi-cone-striped"></i>
-                        Receita
-                    </a>
+                <hr>
+                <li>
+                    <details class="dropdown">
+                        <summary class="btn btn-ghost btn-primary m-1"><i class="bi bi-plus-square"></i>Criar</summary>
+                        <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-32 p-2 shadow-sm">
+                            <li class="h-10 w-full"><a class="btn btn-ghost btn-primary h-full justify-start"
+                                    onclick="income_modal.showModal()">
+                                    <i class="bi bi-cone-striped"></i>
+                                    Receita
+                                </a></li>
+                            <li><a>Item 2</a></li>
+                        </ul>
+                    </details>
                 </li>
             </ul>
         </div>
@@ -93,11 +102,20 @@
                                 <span>Metas</span>
                             </a>
                         </li>
+                        <hr>
                         <li>
-                            <a class="btn btn-ghost w-full h-full justify-start" onclick="income_modal.showModal()">
-                                <i class="bi bi-cone-striped"></i>
-                                Receita
-                            </a>
+                            <details class="dropdown">
+                                <summary class="btn btn-ghost btn-primary mt-2 text-base w-full"><i class="bi bi-plus-square"></i>Criar
+                                </summary>
+                                <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-32 p-2 shadow-sm">
+                                    <li class="h-10 w-full"><a class="btn btn-ghost btn-primary h-full justify-start text-base"
+                                            onclick="income_modal.showModal()">
+                                            <i class="bi bi-cone-striped"></i>
+                                            Receita
+                                        </a></li>
+                                    <li><a>Item 2</a></li>
+                                </ul>
+                            </details>
                         </li>
                     </ul>
                 </div>
