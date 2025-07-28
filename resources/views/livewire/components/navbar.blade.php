@@ -1,7 +1,5 @@
 <div class="z-50">
-
-    <div
-        class="hidden md:fixed md:top-0 md:left-0 md:h-screen md:w-40 md:bg-base-300 md:text-primary-content md:shadow-lg md:p-4 md:flex md:flex-col md:justify-between md:z-50">
+    <div class="hidden md:fixed md:top-0 md:left-0 md:h-screen md:w-40 md:bg-base-300 md:text-primary-content md:shadow-lg md:p-4 md:flex md:flex-col md:justify-between md:z-50">
         <div>
             <div class="text-center text-lg font-bold mb-4">
                 <a href="{{ route('lobby') }}" class="btn btn-ghost w-full">NoSaldo</a>
@@ -29,21 +27,10 @@
                     </a>
                 </li>
                 <li class="dropdown dropdown-right">
-                    <div tabindex="0" role="button"
-                        class="flex items-center space-x-2 px-3 py-2 hover:bg-primary hover:text-primary-content rounded cursor-pointer">
-                        <i class="bi bi-plus-circle-dotted text-lg"></i>
-                        <span>Criar</span>
-                        <i class="bi bi-caret-down-fill text-sm ml-auto"></i>
-                    </div>
-                    <ul tabindex="0"
-                        class="dropdown-content menu bg-base-200 rounded-box mt-2 w-64 p-3 shadow z-[60] space-y-3">
-                        <li>
-                            <livewire:incomes.form-create-income />
-                        </li>
-                        <li>
-                            <p class="text-xs text-base-content/70">Despesas</p>
-                        </li>
-                    </ul>
+                    <a class="btn btn-ghost w-full h-full justify-start" onclick="income_modal.showModal()">
+                        <i class="bi bi-cone-striped"></i>
+                        Receita
+                    </a>
                 </li>
             </ul>
         </div>
@@ -106,23 +93,12 @@
                                 <span>Metas</span>
                             </a>
                         </li>
-                        <div class="navbar-center">
-                            <div class="dropdown dropdown-bottom">
-                                <div tabindex="0" role="button"
-                                    class="btn btn-ghost btn-sm text-lg flex items-center space-x-1 px-2">
-                                    <i class="bi bi-plus text-xl"></i>
-                                    <span>Criar</span>
-                                    <i class="bi bi-caret-down-fill text-sm"></i>
-                                </div>
-                                <ul tabindex="0"
-                                    class="menu menu-sm dropdown-content bg-base-200 rounded-box mt-2 w-64 p-3 shadow z-[60] space-y-2">
-                                    <li>
-                                        <div class="text-sm font-bold">Nova Receita</div>
-                                        <livewire:incomes.form-create-income />
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <li>
+                            <a class="btn btn-ghost w-full h-full justify-start" onclick="income_modal.showModal()">
+                                <i class="bi bi-cone-striped"></i>
+                                Receita
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -158,5 +134,4 @@
             </div>
         </div>
     </div>
-
 </div>
