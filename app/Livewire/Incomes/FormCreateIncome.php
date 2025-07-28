@@ -3,25 +3,33 @@
 namespace App\Livewire\Incomes;
 
 use Livewire\Component;
+use Livewire\Attributes\Validate;
+use Livewire\Attributes\On;
+
 use App\Models\Income;
 use App\Models\Category;
 
 class FormCreateIncome extends Component
 {
+    #[Validate('required',message:'É necessário preencher esse campo')]
+    #[Validate('string',message:'Apenas Caracteres')]
     public $description;
+
+    #[Validate('required',message:'É necessário preencher esse campo')]
     public $value;
+
+    #[Validate('required',message:'É necessário preencher esse campo')]
     public $category;
+
+    #[Validate('required',message:'É necessário preencher esse campo')]
     public $type;
-    public $categoryName;
-    public $categoryType;
+
 
     public function mount(){
         $this->description = null;
         $this->value = null;
         $this->category = null;
         $this->type = null;
-        $this->categoryName = null;
-        $this->categoryType = null;
     }
 
     public function render()
@@ -31,6 +39,8 @@ class FormCreateIncome extends Component
     }
 
     public function storeIncome(){
+
+        $this->validate();
         Income::create([
             "user_id" =>auth()->user()->id,
             "category_id" => $this->category,
@@ -43,17 +53,9 @@ class FormCreateIncome extends Component
         return session()->flash('successIncome','Entrada Cadastrada Com Sucesso!!');
     }
 
+    #[On('storeCategory')]
     public function getCategories(){
         $query = Category::query();
         return $query->get();
-    }
-
-    public function storeCategory(){
-        Category::create([
-            'user_id'=>auth()->user()->id,
-            'name'=>$this->categoryName,
-            'type'=>$this->categoryType
-        ]);
-        return session()->flash('successCategory','Categoria Cadastrada Com Sucesso!!');
     }
 }

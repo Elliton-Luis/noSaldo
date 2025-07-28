@@ -16,6 +16,9 @@
                     </label>
                     <input placeholder="Ex.Salário CLT" type="text" class="input input-bordered w-full"
                         wire:model="description" />
+                    @error('description')
+                        <small class="text-error">{{$message}}</small>
+                    @enderror
                 </div>
 
                 <div class="form-control mb-6">
@@ -25,6 +28,9 @@
                     </label>
                     <input type="number" step="0.01" class="input input-bordered w-full" wire:model="value"
                         placeholder="Ex: R$ 1.512,00" />
+                        @error('value')
+                        <small class="text-error">{{$message}}</small>
+                    @enderror
                 </div>
 
                 <div class="form-control mb-6">
@@ -37,6 +43,9 @@
                         <option value="sporadic">Esporádico</option>
                         <option value="recurring">Recorrente</option>
                     </select>
+                    @error('type')
+                        <small class="text-error">{{$message}}</small>
+                    @enderror
                 </div>
 
                 <div class="form-control mb-6">
@@ -57,45 +66,15 @@
                             <i class="bi bi-plus"></i>
                         </button>
                     </div>
+                    @error('category')
+                    <small class="text-error">{{$message}}</small>
+                    @enderror
                 </div>
 
                 <button type="submit" class="btn btn-soft btn-primary w-48 mt-2">Enviar</button>
                 <button type="button" class="btn btn-soft btn-error w-24 mt-2" onclick="income_modal.close()">Fechar</button>
             </form>
         </div>
-
-        <dialog id="category_modal" class="modal">
-            <div class="modal-box w-full max-w-sm p-6 bg-base-100 shadow-xl rounded-xl space-y-4">
-                <h3 class="text-lg font-semibold text-white text-center">Cadastrar Categoria</h3>
-
-                <div class="form-control mb-3">
-                    <label class="label">
-                        <i class="bi bi-tag mr-2"></i>
-                        <span class="label-text text-white font-bold">Nome</span>
-                    </label>
-                    <input placeholder="Ex.Alimentação" type="text" class="input input-bordered"
-                        wire:model="categoryName" />
-                </div>
-
-                <div class="form-control mb-4">
-                    <label class="label">
-                        <i class="bi bi-arrow-down-circle mr-2"></i>
-                        <span class="label-text text-white font-bold">Tipo</span>
-                    </label>
-                    <select class="select select-bordered" wire:model="categoryType">
-                        <option value="null" disabled selected>Selecione o Tipo da Categoria</option>
-                        <option value="income">Receita</option>
-                        <option value="expense">Despesa</option>
-                        <option value="both">Ambos</option>
-                    </select>
-                </div>
-
-                <div class="modal-action justify-end gap-2">
-                    <button class="btn btn-error" onclick="document.getElementById('category_modal').close()">Fechar</button>
-                    <button class="btn btn-success" wire:click="storeCategory()"
-                        onclick="document.getElementById('category_modal').close()">Salvar</button>
-                </div>
-            </div>
-        </dialog>
+        <livewire:create-category-modal/>
     </dialog>
 </div>
