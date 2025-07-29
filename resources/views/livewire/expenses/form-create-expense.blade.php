@@ -14,7 +14,7 @@
                         <i class="bi bi-pencil-square mr-2"></i>
                         <span class="label-text">Descrição</span>
                     </label>
-                    <input placeholder="Ex.Salário CLT" type="text" class="input input-bordered w-full"
+                    <input placeholder="Ex.Açai 500ml" type="text" class="input input-bordered w-full"
                         wire:model="description" />
                     @error('description')
                         <small class="text-error">{{$message}}</small>
@@ -27,7 +27,7 @@
                         <span class="label-text">Valor (R$)</span>
                     </label>
                     <input type="number" step="0.01" class="input input-bordered w-full" wire:model="value"
-                        placeholder="Ex: R$ 1.512,00" />
+                        placeholder="Ex: R$ 18.00" />
                         @error('value')
                         <small class="text-error">{{$message}}</small>
                     @enderror
