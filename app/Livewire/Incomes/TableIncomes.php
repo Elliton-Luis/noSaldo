@@ -3,11 +3,15 @@
 namespace App\Livewire\Incomes;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 
 use App\Models\Income;
 
 class TableIncomes extends Component
 {
+
+    use WithPagination;
+
     public function render()
     {
         $incomes = $this->getIncomes();
