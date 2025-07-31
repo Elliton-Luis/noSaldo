@@ -10,7 +10,10 @@
     @livewireStyles
 </head>
 <body>
-    <livewire:components.navbar/>
+    <div class="block">
+        <livewire:components.navbar/>
+    </div>
+
     <livewire:incomes.form-create-income />
     <livewire:expenses.form-create-expense />
 
