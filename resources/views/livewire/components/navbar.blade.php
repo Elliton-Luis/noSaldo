@@ -1,6 +1,6 @@
 <div class="z-50">
     <div
-        class="hidden md:fixed md:top-0 md:left-0 md:h-screen md:w-40 md:bg-base-300 md:text-primary-content md:shadow-lg md:p-4 md:flex md:flex-col md:justify-between md:z-50">
+        class="hidden md:fixed md:top-0 md:left-0 md:h-screen md:w-40 md:bg-zinc-950 md:text-primary-content md:shadow-lg md:p-4 md:flex md:flex-col md:justify-between md:z-50">
         <div>
             <div class="text-center text-lg font-bold mb-4">
                 <a href="{{ route('lobby') }}" class="btn btn-ghost w-full">NoSaldo</a>
@@ -9,20 +9,20 @@
             <ul class="menu space-y-1">
                 <li>
                     <a href="{{ route('income.index') }}"
-                        class="flex items-center space-x-2 px-3 py-2 hover:bg-primary hover:text-primary-content rounded">
+                        class="flex items-center space-x-2 px-3 py-2 hover:bg-neutral-800 hover:text-yellow-400 rounded">
                         <i class="bi bi-bag-plus-fill text-lg"></i>
                         <span>Receitas</span>
                     </a>
                 </li>
                 <li>
-                    <a class="flex items-center space-x-2 px-3 py-2 hover:bg-primary hover:text-primary-content rounded">
+                    <a class="flex items-center space-x-2 px-3 py-2 hover:bg-neutral-800 hover:text-yellow-400 rounded">
                         <i class="bi bi-bag-dash-fill text-lg"></i>
                         <span>Despesas</span>
                     </a>
                 </li>
                 <li>
                     <a
-                        class="flex items-center space-x-2 px-3 py-2 hover:bg-primary hover:text-primary-content rounded">
+                        class="flex items-center space-x-2 px-3 py-2 hover:bg-neutral-800 hover:text-yellow-400 rounded">
                         <i class="bi bi-award-fill text-lg"></i>
                         <span>Metas</span>
                     </a>
@@ -30,16 +30,16 @@
                 <hr>
                 <li>
                     <details class="dropdown">
-                        <summary class="btn btn-ghost btn-primary m-1"><i class="bi bi-plus-square"></i>Criar</summary>
-                        <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-32 p-2 shadow-sm">
-                            <li class="h-10 w-full"><a class="btn btn-ghost btn-primary h-full justify-start"
+                        <summary class="btn btn-ghost btn-warning m-1"><i class="bi bi-plus-square"></i>Criar</summary>
+                        <ul class="menu dropdown-content bg-neutral-800 rounded-box z-1 w-32 p-2 shadow-sm">
+                            <li class="h-10 w-full"><a class="btn btn-ghost btn-warning h-full justify-start"
                                     onclick="income_modal.showModal()">
                                     <i class="bi bi-wallet-fill"></i>
                                     Receita
                                 </a>
                             </li>
 
-                            <li class="h-10 w-full"><a class="btn btn-ghost btn-primary h-full justify-start"
+                            <li class="h-10 w-full"><a class="btn btn-ghost btn-warning h-full justify-start"
                                     onclick="expense_modal.showModal()">
                                     <i class="bi bi-basket2-fill"></i>
                                     Gasto
@@ -59,13 +59,13 @@
             <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-200 rounded-box mt-2 w-full p-1 shadow">
                 <li>
                     <a
-                        class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
+                        class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-neutral-800 hover:text-yellow-400 rounded">
                         <i class="bi bi-person text-lg"></i>
                         <span>Usuário</span>
                     </a>
                 </li>
                 <li>
-                    <a class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded"
+                    <a class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-neutral-800 hover:text-yellow-400 rounded"
                         href="{{ route('login.logout') }}">
                         <i class="bi bi-box-arrow-in-left text-lg"></i>
                         <span>Sair</span>
@@ -90,21 +90,21 @@
                         class="menu menu-sm dropdown-content bg-base-200 rounded-box z-10 mt-3 w-40 p-1 shadow">
                         <li>
                             <a href="{{ route('income.index') }}"
-                                class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
+                                class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-neutral-800 hover:text-yellow-400 rounded">
                                 <i class="bi bi-bag-plus-fill text-lg"></i>
                                 <span>Receitas</span>
                             </a>
                         </li>
                         <li>
                             <a
-                                class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
+                                class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-neutral-800 hover:text-yellow-400 rounded">
                                 <i class="bi bi-bag-dash-fill text-lg"></i>
                                 <span>Despesas</span>
                             </a>
                         </li>
                         <li>
                             <a
-                                class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
+                                class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-neutral-800 hover:text-yellow-400 rounded">
                                 <i class="bi bi-award-fill text-lg"></i>
                                 <span>Metas</span>
                             </a>
@@ -112,18 +112,18 @@
                         <hr>
                         <li>
                             <details class="dropdown">
-                                <summary class="btn btn-ghost btn-primary mt-2 text-base w-full"><i
+                                <summary class="btn btn-ghost btn-warning mt-2 text-base w-full"><i
                                         class="bi bi-plus-square"></i>Criar
                                 </summary>
-                                <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-32 p-2 shadow-sm">
+                                <ul class="menu dropdown-content bg-neutral-900 rounded-box z-1 w-32 p-2 shadow-sm">
                                     <li class="h-10 w-full"><a
-                                            class="btn btn-ghost btn-primary h-full justify-start text-base"
+                                            class="btn btn-ghost btn-warning h-full justify-start text-base"
                                             onclick="income_modal.showModal()">
                                             <i class="bi bi-cone-striped"></i>
                                             Receita
                                         </a></li>
                                     <li class="h-10 w-full"><a
-                                            class="btn btn-ghost btn-primary h-full justify-start text-base"
+                                            class="btn btn-ghost btn-warning h-full justify-start text-base"
                                             onclick="expense_modal.showModal()">
                                             <i class="bi bi-cone-striped"></i>
                                             Gasto
@@ -149,13 +149,13 @@
                         class="menu menu-sm dropdown-content bg-base-200 rounded-box z-10 mt-3 w-40 p-1 shadow">
                         <li>
                             <a
-                                class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded">
+                                class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-neutral-800 hover:text-yellow-400 rounded">
                                 <i class="bi bi-person text-lg"></i>
                                 <span>Usuário</span>
                             </a>
                         </li>
                         <li>
-                            <a class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-primary hover:text-primary-content rounded"
+                            <a class="flex items-center space-x-2 text-base px-3 py-1 hover:bg-neutral-800 hover:text-yellow-400 rounded"
                                 href="{{ route('login.logout') }}">
                                 <i class="bi bi-box-arrow-in-left text-lg"></i>
                                 <span>Sair</span>

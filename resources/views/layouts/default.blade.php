@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,51 +10,53 @@
     @stack('scriptVite')
     @livewireStyles
 </head>
-<body>
+
+<body class="sm:ml-40">
     <div class="block">
-        <livewire:components.navbar/>
+        <livewire:components.navbar />
     </div>
 
     <livewire:incomes.form-create-income />
     <livewire:expenses.form-create-expense />
 
-    <div class="bg-gray-800">
+    <div class="bg-neutral-900">
         @yield('content')
     </div>
 
-    @if(Session::has('error'))
-    <div id="toast-error" class="toast">
-        <div class="alert alert-error">
-            <span>{{ Session('error') }}</span>
+    @if (Session::has('error'))
+        <div id="toast-error" class="toast">
+            <div class="alert alert-error">
+                <span>{{ Session('error') }}</span>
+            </div>
         </div>
-    </div>
 
-    <script>
-        const toast = document.getElementById('toast-error');
+        <script>
+            const toast = document.getElementById('toast-error');
 
-        setTimeout(() => {
-            toast.classList.add('opacity-0', 'transition-opacity', 'duration-500');
-        }, 3000);
-    </script>
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+            }, 3000);
+        </script>
     @endif
 
 
-    @if(Session::has('success'))
-    <div id="toast-success" class="toast">
-        <div class="alert alert-success">
-            <span>{{ Session('success') }}</span>
+    @if (Session::has('success'))
+        <div id="toast-success" class="toast">
+            <div class="alert alert-success">
+                <span>{{ Session('success') }}</span>
+            </div>
         </div>
-    </div>
 
-    <script>
-        const toast = document.getElementById('toast-success');
+        <script>
+            const toast = document.getElementById('toast-success');
 
-        setTimeout(() => {
-            toast.classList.add('opacity-0', 'transition-opacity', 'duration-500');
-        }, 3000);
-    </script>
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+            }, 3000);
+        </script>
     @endif
 
     @livewireScripts
 </body>
+
 </html>

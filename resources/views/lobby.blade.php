@@ -11,7 +11,7 @@
 <div class="min-h-screen flex justify-center items-center align-center">
 
     <div class="flex items-center justify-center h-screen">
-        <div class="w-72 h-96 bg-base-300 shadow-xl rounded-2xl flex flex-col justify-between border border-base-300 p-6">
+        <div class="w-72 h-96 bg-neutral-950 shadow-xl rounded-2xl flex flex-col justify-between border border-base-300 p-6">
 
             <h2 class="text-xl font-bold text-center text-slate-200">Saldo Total</h2>
 

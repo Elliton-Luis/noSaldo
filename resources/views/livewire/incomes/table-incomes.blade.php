@@ -1,13 +1,12 @@
 <div
     class="w-full mx-auto rounded-box bg-neutral-950
-         max-w-96 md:max-w-xl lg:max-w-none lg:w-[25vw]
-         p-4 md:px-0 flex flex-col mt-16 overflow-hidden">
-
+         max-w-96 lg:max-w-none lg:w-140
+         p-4 md:px-0 flex flex-col mt-16">
 
     <div class="flex-1 border border-neutral-950 border-7">
         <div class="flex items-center justify-center mb-5">
             <h1 class="text-lg font-bold text-white mx-13">Últimas Receitas</h1>
-            <select class="bg-zinc-700 select select-bordered w-36" wire:model.lazy="filter">
+            <select class="bg-neutral-800 select select-bordered w-36" wire:model.lazy="filter">
                 <option value="desc">Mais recentes primeiro</option>
                 <option value="asc">Mais antigos primeiro</option>
             </select>
@@ -19,7 +18,7 @@
                     <th class="w-10 text-gray-50">N°</th>
                     <th class="min-w-[8rem] text-gray-50">Descrição</th>
                     <th class="w-24 text-gray-50">Valor</th>
-                    <th class="hidden md:table-cell min-w-[8rem] text-gray-50">Categoria</th>
+                    <th class="hidden sm:table-cell min-w-[8rem] text-gray-50">Categoria</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,7 +30,7 @@
                         </td>
 
                         <td class="w-24 truncate text-success font-bold">R$ {{ number_format($income->value, 2, ',', '.') }}</td>
-                        <td class="hidden md:table-cell min-w-[8rem] text-amber-300 font-bold">{{ $income->category->name }}</td>
+                        <td class="hidden sm:table-cell min-w-[8rem] text-amber-300 font-bold">{{ $income->category->name }}</td>
                     </tr>
                 @empty
                     <tr>
@@ -44,7 +43,7 @@
         </table>
     </div>
 
-    <div class="sticky bottom-0 bg-neutral-950 z-10 mt-2 flex justify-end mx-5">
+    <div class="sticky bottom-0 bg-neutral-950 w-full z-10 mt-2 flex justify-end p-2">
         {{ $incomes->links('vendor.livewire.tailwind', ['scrollTo' => false]) }}
     </div>
 </div>

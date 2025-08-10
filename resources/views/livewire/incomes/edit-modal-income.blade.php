@@ -1,6 +1,6 @@
 <div>
     <button
-        class="w-full text-base rounded bg-neutral-700 hover:border-gray-50 hover:bg-neutral-500 truncate overflow-hidden text-base px-3 py-2 text-left"
+        class="w-full text-base rounded bg-neutral-800 hover:border-gray-50 hover:bg-neutral-600 truncate overflow-hidden text-base px-3 py-2 text-left"
         onclick="modal_{{ $id }}.showModal()">
         {{ $description }}
     </button>
