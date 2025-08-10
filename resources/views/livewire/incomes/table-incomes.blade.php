@@ -29,8 +29,8 @@
                             <livewire:incomes.edit-modal-income :id="$income->id" :key="'edit_income_modal_'.$income->id" />
                         </td>
 
-                        <td class="w-24 truncate text-success font-bold">R$ {{ number_format($income->value, 2, ',', '.') }}</td>
-                        <td class="hidden sm:table-cell min-w-[8rem] text-amber-300 font-bold">{{ $income->category->name }}</td>
+                        <td class="w-24 truncate text-emerald-500 font-bold">R$ {{ number_format($income->value, 2, ',', '.') }}</td>
+                        <td class="hidden sm:table-cell min-w-[8rem] text-orange-400 font-bold">{{ $income->category->name }}</td>
                     </tr>
                 @empty
                     <tr>
