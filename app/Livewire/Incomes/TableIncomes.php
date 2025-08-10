@@ -12,20 +12,33 @@ class TableIncomes extends Component
 
     use WithPagination;
 
+    public $filter;
+
+    public function mount()
+    {
+        $this->filter = 'desc';
+    }
+
     public function render()
     {
         $incomes = $this->getIncomes();
-        $this->getCategories();
-        return view('livewire.incomes.table-incomes',['incomes'=>$incomes]);
+
+        return view('livewire.incomes.table-incomes',[
+            'incomes'=>$incomes
+        ]);
     }
 
-    public function getIncomes(){
-        $incomes = Income::orderBy('created_at','desc')->paginate(10);
-        return $incomes;
+    public function getIncomes()
+    {
+        $query = Income::query();
+
+        $query->orderBy('created_at', $this->filter);
+
+        return $query->paginate(10,'*','incomes');
     }
 
-    public function getCategories(){
-        $incomes = $this->getIncomes();
-
+    public function resetPage(){
+        $this->resetPage();
     }
+
 }
