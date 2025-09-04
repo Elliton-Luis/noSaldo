@@ -5,6 +5,7 @@ namespace App\Livewire\Incomes;
 use Livewire\Component;
 
 use App\Models\Income;
+use App\Models\Category;
 
 class EditModalIncome extends Component
 {
@@ -26,10 +27,33 @@ class EditModalIncome extends Component
 
     public function render()
     {
-        return view('livewire.incomes.edit-modal-income');
+        $categories = $this->getCategories();
+
+        return view('livewire.incomes.edit-modal-income',['categories'=>$categories]);
     }
 
     public function getIncome(){
         return $income = Income::findOrFail($this->id);
+    }
+
+    public function getCategories(){
+        $query = Category::query();
+        $query->where('type','income')->orWhere('type','both');
+        return $query->get();
+    }
+
+    public function changeIncome(){
+        $income = $this->getIncome();
+
+        $income->description = $this->description;
+        $income->value = $this->value;
+        $income->type = $this->type;
+        $income->category = $this->category;
+        $income->save();
+
+        session()->flash('successEditIncome','Mudanças Aplicadas');
+
+        $this->dispatch('changeIncome');
+
     }
 }

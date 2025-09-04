@@ -28,7 +28,7 @@ class FormCreateIncome extends Component
         $this->description = null;
         $this->value = null;
         $this->category = null;
-        $this->type = null;
+        $this->type = 'sporadic';
     }
 
     public function render()
