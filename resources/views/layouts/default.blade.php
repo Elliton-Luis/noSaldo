@@ -11,7 +11,7 @@
     @livewireStyles
 </head>
 
-<body class="sm:ml-40">
+<body class="sm:ml-40 ">
     <div class="block">
         <livewire:components.navbar />
     </div>
@@ -19,7 +19,7 @@
     <livewire:incomes.form-create-income />
     <livewire:expenses.form-create-expense />
 
-    <div class="bg-neutral-900">
+    <div class="bg-stone-950">
         @yield('content')
     </div>
 

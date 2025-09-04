@@ -12,28 +12,28 @@
         <h2 class="text-2xl font-bold text-stone-100 tracking-tight">Resumo Mensal</h2>
     </div>
 
-    {{-- Detalhes de Entradas e Saídas --}}
     <div class="space-y-5">
         <div>
             <div class="flex justify-between items-center">
                 <span class="text-stone-400">Entradas</span>
-                <span class="text-lg font-semibold text-green-400 tracking-tighter">+ R$ {{ number_format($incomeTotal, 2, ',', '.') }}</span>
+                <span class="text-lg font-semibold text-green-400 tracking-tighter">+ R$ {{ number_format($totalIncome, 2, ',', '.') }}</span>
             </div>
-            <p class="text-xs text-stone-500 text-right">em 5 transações</p> {{-- Exemplo de item adicionado --}}
+            <p class="text-xs text-stone-500 text-right">em 5 transações</p>
         </div>
 
         <div>
             <div class="flex justify-between items-center">
                 <span class="text-stone-400">Saídas</span>
-                <span class="text-lg font-semibold text-rose-400 tracking-tighter">- R$ {{ number_format(500, 2, ',', '.') }}</span>
+                <span class="text-lg font-semibold text-rose-400 tracking-tighter">- R$ {{ number_format($totalExpense, 2, ',', '.') }}</span>
             </div>
              <p class="text-xs text-stone-500 text-right">em 8 transações</p>
         </div>
     </div>
 
     <div class="mt-6">
+        <h1>Meta de Gastos</h1>
         <div class="w-full bg-stone-700/50 rounded-full h-2.5">
-            <div class="bg-rose-500 h-2.5 rounded-full" style="width: 45%"></div>
+            <div class="bg-rose-500 h-2.5 rounded-full" style="width: {{$percTotal}}%"></div>
         </div>
     </div>
 
