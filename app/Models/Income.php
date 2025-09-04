@@ -19,14 +19,17 @@ class Income extends Model
         'value',
         'user_id',
         'category_id',
+        'type',
         'date'
     ];
 
     public function category(): BelongsTo{
         return $this->belongsTo(Category::class);
-        
+
     }
 
-
-
+    public function getTypeLabelAttribute()
+    {
+        return $this->type === 'recurring' ? 'Recorrente' : 'Esporádico';
+    }
 }
