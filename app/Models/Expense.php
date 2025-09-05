@@ -13,6 +13,12 @@ class Expense extends Model
         'value',
         'user_id',
         'category_id',
-        'date'
+        'date',
+        'type'
     ];
+
+    public function getTypeLabelAttribute()
+    {
+        return $this->type === 'recurring' ? 'Recorrente' : 'Esporádico';
+    }
 }
