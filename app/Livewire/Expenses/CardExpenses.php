@@ -10,7 +10,7 @@ class CardExpenses extends Component
     public function render()
     {
         $expenses = $this->getExpenses();
-        return view('livewire.expenses.card-expenses');
+        return view('livewire.expenses.card-expenses',['expenses'=>$expenses]);
     }
 
     public function getExpenses(){
