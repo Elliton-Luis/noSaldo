@@ -1,6 +1,6 @@
 <div>
     <dialog id="category_modal" class="modal" wire:ignore.self>
-        <div class="modal-box w-full max-w-sm bg-stone-900 border border-stone-800">
+        <div class="modal-box w-full max-w-sm bg-stone-900 border-2 border-amber-600">
             <h3 class="text-2xl font-bold text-center text-stone-100 tracking-tight">Cadastrar Categoria</h3>
 
             @if (Session::has('successCategory'))

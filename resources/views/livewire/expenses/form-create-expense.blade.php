@@ -1,6 +1,6 @@
 <div class="w-full h-full p-0">
     <dialog id="expense_modal" class="modal" wire:ignore.self>
-        <div class="modal-box w-96 max-w-md flex flex-col items-center bg-stone-900 border-4 border-red-500/50">
+        <div class="modal-box w-96 max-w-md flex flex-col items-center bg-stone-900 border-2 border-stone-200/50">
             <h3 class="text-2xl font-bold mb-6 text-center text-stone-100 tracking-tight">Cadastrar Despesa</h3>
 
             @if (Session::has('successExpense'))
