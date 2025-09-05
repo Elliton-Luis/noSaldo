@@ -1,6 +1,6 @@
 <div class="w-full h-full p-0">
     <dialog id="income_modal" class="modal" wire:ignore.self>
-        <div class="modal-box w-96 max-w-md flex flex-col items-center bg-stone-900 border border-stone-800">
+        <div class="modal-box w-96 max-w-md flex flex-col items-center bg-stone-900 border-4 border-green-500/50">
             <h3 class="text-2xl font-bold mb-6 text-center text-stone-100 tracking-tight">Cadastrar Receita</h3>
 
             @if (Session::has('successIncome'))
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="flex items-center gap-2 mt-4">
-                    <button type="submit" class="btn flex-grow bg-amber-600 hover:bg-amber-500 text-white border-0">Enviar</button>
+                    <button type="submit" class="btn flex-grow bg-green-600 hover:bg-green-500 text-white border-0">Enviar</button>
                     <button type="button" class="btn bg-stone-700 hover:bg-stone-600 text-stone-200 border-0" onclick="income_modal.close()">Fechar</button>
                 </div>
             </form>

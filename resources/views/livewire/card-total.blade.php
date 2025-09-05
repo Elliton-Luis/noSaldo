@@ -58,7 +58,7 @@
         </a>
         <a onclick="expense_modal.showModal()">
             <button class="btn flex-1 bg-rose-500/10 border border-rose-500/20 text-rose-400 hover:bg-rose-500/20">
-                <i class="bi bi-dash-circle">Despesa</i>
+                <i class="bi bi-dash-circle"></i>Despesa
             </button>
         </a>
     </div>
