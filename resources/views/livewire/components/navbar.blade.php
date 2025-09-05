@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="{{ route('expense.index')}}"
                         class="flex items-center gap-2 px-3 py-2 rounded-lg text-stone-400 text-sm transition-colors hover:bg-stone-800 hover:text-stone-100">
                         <i class="bi bi-arrow-down-left-circle-fill text-lg"></i>
                         <span>Despesas</span>
