@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\IncomeController;
-use App\Http\Controllers\ExpenseIncomeController;
+use App\Http\Controllers\ExpenseController;
 
 Route::get('/', function () {
     return view('login.index');
