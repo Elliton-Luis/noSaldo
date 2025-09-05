@@ -16,11 +16,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach ($incomes as $income)
-                    {{-- AJUSTES DE LAYOUT:
-                        - Padding interno reduzido de p-6 para p-5.
-                        - Espaço entre as seções reduzido de mt-6 para mt-5.
-                        - Tamanho do valor financeiro reduzido de text-2xl para text-xl para melhor equilíbrio.
-                    --}}
+
                     <div class="group flex flex-col justify-between rounded-2xl bg-stone-950/50 p-5 shadow-lg
                                 border border-stone-800/40 backdrop-blur-sm
                                 transition-all duration-300 ease-in-out
@@ -42,11 +38,11 @@
                             <span class="rounded-full px-2.5 py-1 text-xs font-semibold
                                 {{ $income->type === 'recurring'
                                     ? 'border border-amber-500/30 bg-amber-900/60 text-amber-300'
-                                    : 'border border-stone-500/30 bg-stone-800/60 text-stone-300' }}">
+                                    : 'border border-stone-500/30 bg-stone-800/60 text-teal-300' }}">
                                 {{ ucfirst($income->type_label) }}
                             </span>
                             <p class="text-xl font-bold tracking-tighter
-                                {{ $income->type === 'recurring' ? 'text-green-500' : 'text-stone-400' }}">
+                                {{ $income->type === 'recurring' ? 'text-green-500' : 'text-teal-400' }}">
                                 R$ +{{ number_format($income->value, 2, ',', '.') }}
                             </p>
                         </div>
@@ -65,6 +61,6 @@
             </div>
 
         @endif
-
+            {{-- $incomes->links('vendor.livewire.tailwind') --}}
     </div>
 </div>

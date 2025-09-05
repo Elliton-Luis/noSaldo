@@ -49,6 +49,7 @@ class FormCreateExpense extends Component
             "date" => date('Y-m-d')
         ]);
         $this->reset();
+        $this->dispatch('storeIncome');
         return session()->flash('successExpense','Entrada Cadastrada Com Sucesso!!');
     }
 

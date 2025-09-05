@@ -17,6 +17,7 @@ class CardIncomes extends Component
 
     public function getIncomes(){
         $query = Income::query();
+        $query->where('user_id',auth()->user()->id);
         return $query->paginate(9);
     }
 }

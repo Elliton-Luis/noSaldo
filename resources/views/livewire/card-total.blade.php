@@ -18,7 +18,7 @@
                 <span class="text-stone-400">Entradas</span>
                 <span class="text-lg font-semibold text-green-400 tracking-tighter">+ R$ {{ number_format($totalIncome, 2, ',', '.') }}</span>
             </div>
-            <p class="text-xs text-stone-500 text-right">em 5 transações</p>
+            <p class="text-xs text-stone-500 text-right">{{$countIncome}} transações</p>
         </div>
 
         <div>
@@ -26,14 +26,14 @@
                 <span class="text-stone-400">Saídas</span>
                 <span class="text-lg font-semibold text-rose-400 tracking-tighter">- R$ {{ number_format($totalExpense, 2, ',', '.') }}</span>
             </div>
-             <p class="text-xs text-stone-500 text-right">em 8 transações</p>
+             <p class="text-xs text-stone-500 text-right">{{$countExpense}} transações</p>
         </div>
     </div>
 
     <div class="mt-6">
         <h1>Meta de Gastos</h1>
         <div class="w-full bg-stone-700/50 rounded-full h-2.5">
-            <div class="bg-rose-500 h-2.5 rounded-full" style="width: {{$percTotal}}%"></div>
+            <div class="bg-rose-500 h-2.5 rounded-full" style="width: 45%"></div>
         </div>
     </div>
 
@@ -42,7 +42,7 @@
 
     <div class="flex justify-between items-center mb-6">
         <span class="text-lg font-medium text-stone-200">Saldo Final:</span>
-        <span class="text-3xl font-bold text-green-400 tracking-tight">+ R$ {{ number_format(500, 2, ',', '.') }}</span>
+        <span class="text-3xl font-bold {{$totalIncome - $totalExpense < 0 ? 'text-red-500' : 'text-green-500'}} tracking-tight">{{ number_format($totalIncome - $totalExpense, 2, ',', '.') }} R$</span>
     </div>
 
     <div class="flex items-center gap-3">

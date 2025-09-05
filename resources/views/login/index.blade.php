@@ -41,7 +41,7 @@
                     </label>
                     <input type="password" placeholder="••••••••" class="input input-bordered" name="password"/>
                     @error('password')
-                        <small>{{$message}}</small>
+                        <small class="text-error">{{$message}}</small>
                     @enderror
                 </div>
 

@@ -49,13 +49,14 @@ class FormCreateIncome extends Component
             "date" => date('Y-m-d')
         ]);
         $this->reset();
+        $this->dispatch('storeIncome');
         return session()->flash('successIncome','Entrada Cadastrada Com Sucesso!!');
     }
 
     #[On('storeCategory')]
     public function getCategories(){
         $query = Category::query();
-        $query->where('type','income')->orWhere('type','both');
+        $query->where('type','income')->orWhere('type','both')->where('user_id',auth()->user()->id);
         return $query->get();
     }
 }
