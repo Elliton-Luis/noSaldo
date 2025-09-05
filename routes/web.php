@@ -15,8 +15,12 @@ Route::get('/lobby', function (){
 Route::post('/auth', [LoginController::class,'authUser'])->name('login.auth');
 Route::get('/logout', [LoginController::class,'logoutUser'])->name('login.logout');
 
-Route::prefix('/entrada')->group( function(){
+Route::prefix('/receitas')->group( function(){
     Route::get('/',[IncomeController::class,'showIncome'])->name('income.index');
+});
+
+Route::prefix('/despesas')->group( function(){
+    Route::get('/',[ExpenseController::class,'showExpense'])->name('expense.index');
 });
 
 
