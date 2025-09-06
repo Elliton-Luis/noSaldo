@@ -41,18 +41,12 @@
 
 
     @if (Session::has('success'))
-        <div id="toast-success" class="toast">
-            <div class="alert alert-success">
-                <span>{{ Session('success') }}</span>
-            </div>
+        <div id="toast-success"
+            class="fixed bottom-5 right-5 p-4 rounded-lg shadow-lg bg-green-900/80 backdrop-blur-sm border border-green-700 text-green-300 transition-opacity duration-500">
+            <span>{{ Session('success') }}</span>
         </div>
-
         <script>
-            const toast = document.getElementById('toast-success');
-
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'transition-opacity', 'duration-500');
-            }, 3000);
+            setTimeout(() => document.getElementById('toast-success')?.classList.add('opacity-0'), 3000);
         </script>
     @endif
 
