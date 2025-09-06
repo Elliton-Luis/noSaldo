@@ -1,3 +1,14 @@
-<div>
-    <!-- The best way to take care of the future is to take care of the present moment. - Thich Nhat Hanh -->
+@extends('layouts.default')
+
+@push('scriptVite')
+    @vite(['resources/js/welcome.js'])
+@endpush
+
+@section('title','lobby')
+
+@section('content')
+
+<div class="min-h-screen flex justify-center items-center align-center">
+    <livewire:goals.financial-overview/>
 </div>
+@endsection

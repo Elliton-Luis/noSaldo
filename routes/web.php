@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\GoalsController;
 
 Route::get('/', function () {
     return view('login.index');
@@ -23,6 +25,8 @@ Route::prefix('/receitas')->group( function(){
 Route::prefix('/despesas')->group( function(){
     Route::get('/',[ExpenseController::class,'showExpense'])->name('expense.index');
 });
+
+Route::get('/metas', [GoalsController::class,'showGoals'])->name('goals.index');
 
 
 

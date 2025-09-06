@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="{{ route('goals.index')}}"
                         class="flex items-center gap-2 px-3 py-2 rounded-lg text-stone-400 text-sm transition-colors hover:bg-stone-800 hover:text-stone-100">
                         <i class="bi bi-trophy-fill text-lg"></i>
                         <span>Metas</span>
@@ -84,10 +84,10 @@
                             class="flex items-center gap-3 px-4 py-2 rounded hover:bg-stone-800">
                             <i class="bi bi-arrow-up-right-circle-fill text-lg"></i> Receitas
                         </a></li>
-                    <li><a href="#" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-stone-800">
+                    <li><a href="{{ route('expense.index')}}" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-stone-800">
                             <i class="bi bi-arrow-down-left-circle-fill text-lg"></i> Despesas
                         </a></li>
-                    <li><a href="#" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-stone-800">
+                    <li><a href="{{ route('goals.index')}}" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-stone-800">
                             <i class="bi bi-trophy-fill text-lg"></i> Metas
                         </a></li>
 
