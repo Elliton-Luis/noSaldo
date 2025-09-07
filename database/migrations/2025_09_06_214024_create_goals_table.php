@@ -17,7 +17,7 @@ return new class extends Migration
             $table->enum('status', ['active', 'finished'])->default('active');
             $table->date('deadline');
             $table->tinyInteger('priority')->default(1);
-            $table->foreignId('icon_id')->nullable()->constrained('icons');
+            $table->foreignId('icon_id')->constrained('icons')->onDelete('cascade');
             $table->timestamps();
         });
 
