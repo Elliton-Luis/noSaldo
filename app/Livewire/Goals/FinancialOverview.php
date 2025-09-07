@@ -4,6 +4,8 @@ namespace App\Livewire\Goals;
 
 use Livewire\Component;
 use App\Models\Goal;
+use App\Models\Income;
+use App\Models\Expense;
 
 class FinancialOverview extends Component
 {
@@ -16,11 +18,20 @@ class FinancialOverview extends Component
     public function render()
     {
         $goals = $this->getGoals();
-        return view('livewire.goals.financial-overview',['goals'=>$goals]);
+        $totalBalance = $this->getBalance();
+        return view('livewire.goals.financial-overview',['goals'=>$goals,'totalBalance'=>$totalBalance]);
     }
     #[On('goalCreated')]
     public function getGoals(){
         $query = Goal::query();
         return $query->where('user_id',$this->user)->paginate(10);
+    }
+
+    public function getBalance(){
+        $income = Income::where('user_id',$this->user)->sum('value');
+        $expense = Expense::where('user_id',$this->user)->sum('value');
+        $totalBalance = $income-$expense;
+
+        return $totalBalance;
     }
 }
