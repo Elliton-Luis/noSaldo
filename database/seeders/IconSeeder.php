@@ -10,38 +10,54 @@ class IconSeeder extends Seeder
 {
     public function run(): void
     {
-        Icon::create(['name' => 'trophy', 'class' => 'trophy', 'category' => 'Objetivos']);
-        Icon::create(['name' => 'award', 'class' => 'award', 'category' => 'Objetivos']);
-        Icon::create(['name' => 'flag', 'class' => 'flag', 'category' => 'Objetivos']);
-        Icon::create(['name' => 'check-circle', 'class' => 'check-circle', 'category' => 'Objetivos']);
-        Icon::create(['name' => 'star', 'class' => 'star', 'category' => 'Objetivos']);
-        Icon::create(['name' => 'medal', 'class' => 'medal', 'category' => 'Objetivos']);
-        Icon::create(['name' => 'rocket', 'class' => 'rocket', 'category' => 'Objetivos']);
-        Icon::create(['name' => 'target', 'class' => 'target', 'category' => 'Objetivos']);
-        Icon::create(['name' => 'coin', 'class' => 'coin', 'category' => 'Finanças']);
-        Icon::create(['name' => 'piggy-bank', 'class' => 'piggy-bank', 'category' => 'Finanças']);
-        Icon::create(['name' => 'cash-stack', 'class' => 'cash-stack', 'category' => 'Finanças']);
-        Icon::create(['name' => 'credit-card', 'class' => 'credit-card', 'category' => 'Finanças']);
-        Icon::create(['name' => 'wallet', 'class' => 'wallet', 'category' => 'Finanças']);
-        Icon::create(['name' => 'bank', 'class' => 'bank', 'category' => 'Finanças']);
-        Icon::create(['name' => 'graph-up', 'class' => 'graph-up', 'category' => 'Finanças']);
-        Icon::create(['name' => 'graph-up-arrow', 'class' => 'graph-up-arrow', 'category' => 'Finanças']);
-        Icon::create(['name' => 'check-square', 'class' => 'check-square', 'category' => 'Tarefas']);
-        Icon::create(['name' => 'list-task', 'class' => 'list-task', 'category' => 'Tarefas']);
-        Icon::create(['name' => 'calendar-check', 'class' => 'calendar-check', 'category' => 'Tarefas']);
-        Icon::create(['name' => 'clipboard-check', 'class' => 'clipboard-check', 'category' => 'Tarefas']);
-        Icon::create(['name' => 'hourglass', 'class' => 'hourglass', 'category' => 'Tarefas']);
-        Icon::create(['name' => 'bell', 'class' => 'bell', 'category' => 'Tarefas']);
-        Icon::create(['name' => 'alarm', 'class' => 'alarm', 'category' => 'Tarefas']);
-        Icon::create(['name' => 'flag-fill', 'class' => 'flag-fill', 'category' => 'Tarefas']);
-        Icon::create(['name' => 'bar-chart-line', 'class' => 'bar-chart-line', 'category' => 'Progresso']);
-        Icon::create(['name' => 'graph-up', 'class' => 'graph-up', 'category' => 'Progresso']);
-        Icon::create(['name' => 'arrow-up', 'class' => 'arrow-up', 'category' => 'Progresso']);
-        Icon::create(['name' => 'arrow-trend-up', 'class' => 'arrow-trend-up', 'category' => 'Progresso']);
-        Icon::create(['name' => 'lightning-charge', 'class' => 'lightning-charge', 'category' => 'Progresso']);
-        Icon::create(['name' => 'play', 'class' => 'play', 'category' => 'Progresso']);
-        Icon::create(['name' => 'rocket-takeoff', 'class' => 'rocket-takeoff', 'category' => 'Progresso']);
-        Icon::create(['name' => 'speedometer', 'class' => 'speedometer', 'category' => 'Progresso']);
+                // Default
+        Icon::create(['name' => 'Padrão', 'class' => 'question-circle', 'category' => 'Default']);
+
+        // Bens (26 ícones)
+        Icon::create(['name' => 'carro', 'class' => 'car-front', 'category' => 'Bens']);
+        Icon::create(['name' => 'casa', 'class' => 'house', 'category' => 'Bens']);
+        Icon::create(['name' => 'predio', 'class' => 'building', 'category' => 'Bens']);
+        Icon::create(['name' => 'loja', 'class' => 'shop', 'category' => 'Bens']);
+        Icon::create(['name' => 'sacola', 'class' => 'bag', 'category' => 'Bens']);
+        Icon::create(['name' => 'sacolacoracao', 'class' => 'bag-heart', 'category' => 'Bens']);
+        Icon::create(['name' => 'telefone', 'class' => 'phone', 'category' => 'Bens']);
+        Icon::create(['name' => 'telefonesmart', 'class' => 'phone-flip', 'category' => 'Bens']);
+        Icon::create(['name' => 'notebook', 'class' => 'laptop', 'category' => 'Bens']);
+        Icon::create(['name' => 'computador', 'class' => 'pc-display', 'category' => 'Bens']);
+        Icon::create(['name' => 'controle', 'class' => 'controller', 'category' => 'Bens']);
+        Icon::create(['name' => 'fones', 'class' => 'headphones', 'category' => 'Bens']);
+        Icon::create(['name' => 'relogio', 'class' => 'watch', 'category' => 'Bens']);
+        Icon::create(['name' => 'bicicleta', 'class' => 'bicycle', 'category' => 'Bens']);
+        Icon::create(['name' => 'copoquente', 'class' => 'cup-hot', 'category' => 'Bens']);
+        Icon::create(['name' => 'ovo', 'class' => 'egg-fried', 'category' => 'Bens']);
+        Icon::create(['name' => 'pizza', 'class' => 'pizza', 'category' => 'Bens']);
+        Icon::create(['name' => 'sorvete', 'class' => 'ice-cream', 'category' => 'Bens']);
+        Icon::create(['name' => 'vinho', 'class' => 'wine', 'category' => 'Bens']);
+        Icon::create(['name' => 'copo', 'class' => 'cup-straw', 'category' => 'Bens']);
+        Icon::create(['name' => 'presente', 'class' => 'gift', 'category' => 'Bens']);
+        Icon::create(['name' => 'diamante', 'class' => 'diamond', 'category' => 'Bens']);
+        Icon::create(['name' => 'camera', 'class' => 'camera', 'category' => 'Bens']);
+        Icon::create(['name' => 'musica', 'class' => 'music-note-beamed', 'category' => 'Bens']);
+        Icon::create(['name' => 'livro', 'class' => 'book', 'category' => 'Bens']);
+        Icon::create(['name' => 'aviao', 'class' => 'airplane', 'category' => 'Bens']);
+
+        // Finanças (14 ícones)
+        Icon::create(['name' => 'dolar', 'class' => 'currency-dollar', 'category' => 'Finanças']);
+        Icon::create(['name' => 'euro', 'class' => 'currency-euro', 'category' => 'Finanças']);
+        Icon::create(['name' => 'bitcoin', 'class' => 'currency-bitcoin', 'category' => 'Finanças']);
+        Icon::create(['name' => 'cofrinho', 'class' => 'piggy-bank', 'category' => 'Finanças']);
+        Icon::create(['name' => 'dinheiro', 'class' => 'cash', 'category' => 'Finanças']);
+        Icon::create(['name' => 'cartao', 'class' => 'credit-card', 'category' => 'Finanças']);
+        Icon::create(['name' => 'carteira', 'class' => 'wallet', 'category' => 'Finanças']);
+        Icon::create(['name' => 'banco', 'class' => 'bank', 'category' => 'Finanças']);
+        Icon::create(['name' => 'cofre', 'class' => 'safe', 'category' => 'Finanças']);
+        Icon::create(['name' => 'nota', 'class' => 'receipt', 'category' => 'Finanças']);
+        Icon::create(['name' => 'graficoCima', 'class' => 'graph-up', 'category' => 'Finanças']);
+        Icon::create(['name' => 'graficoBaixo', 'class' => 'graph-down', 'category' => 'Finanças']);
+        Icon::create(['name' => 'barras', 'class' => 'bar-chart-line', 'category' => 'Finanças']);
+        Icon::create(['name' => 'clipboard', 'class' => 'clipboard-data', 'category' => 'Finanças']);
+
+
 
     }
 }
