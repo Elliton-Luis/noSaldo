@@ -16,7 +16,7 @@
             <div class="flex flex-col items-center gap-4 my-6">
                 <div
                     class="w-24 h-24 bg-stone-800 border-2 border-dashed border-stone-600 rounded-full flex items-center justify-center">
-                    <i class="bi bi-gem text-amber-400 text-5xl"></i>
+                    <i class="bi bi-{{$iconClass}} text-amber-400 text-5xl"></i>
                 </div>
                 <button type="button"
                     class="px-4 py-2 bg-stone-700 hover:bg-stone-600 text-stone-200 text-sm font-semibold rounded-md transition-colors" onClick="icon_modal.showModal()">

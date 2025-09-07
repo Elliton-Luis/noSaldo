@@ -37,7 +37,7 @@
 
                         <div class="flex-shrink-0">
                             <div class="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center">
-                                <i class="bi {{$goal->icon->class}} text-amber-900 text-2xl"></i>
+                                <i class="bi bi-{{$goal->icon->class}} text-amber-900 text-2xl"></i>
                             </div>
                         </div>
 

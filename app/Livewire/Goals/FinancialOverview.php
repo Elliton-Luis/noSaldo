@@ -7,6 +7,8 @@ use App\Models\Goal;
 use App\Models\Income;
 use App\Models\Expense;
 
+use Livewire\Attributes\On;
+
 class FinancialOverview extends Component
 {
     public $user;

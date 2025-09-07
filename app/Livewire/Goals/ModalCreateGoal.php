@@ -4,6 +4,9 @@ namespace App\Livewire\Goals;
 
 use Livewire\Component;
 use App\Models\Goal;
+use App\Models\Icon;
+
+use Livewire\Attributes\On;
 
 class ModalCreateGoal extends Component
 {
@@ -11,6 +14,7 @@ class ModalCreateGoal extends Component
     public $value;
     public $name;
     public $deadline;
+    public $icon;
     public $user;
 
     public function mount(){
@@ -18,12 +22,14 @@ class ModalCreateGoal extends Component
         $this->value = null;
         $this->name = null;
         $this->deadline = null;
+        $this->icon = 1;
         $this->user = auth()->user()->id;
     }
 
     public function render()
     {
-        return view('livewire.goals.modal-create-goal',['priority'=>$this->priority]);
+        $iconClass = $this->iconClass();
+        return view('livewire.goals.modal-create-goal',['priority'=>$this->priority,'iconClass'=>$iconClass]);
     }
 
     public function createGoal(){
@@ -49,11 +55,21 @@ class ModalCreateGoal extends Component
             'total_amount'=>$this->value,
             'deadline'=>$this->deadline,
             'priority'=>$this->priority,
-            'icon_id'=>1
+            'icon_id'=>$this->icon
         ]);
 
         $this->dispatch('goalCreated');
         return session()->flash('successGoal','Meta Cadastrada Com Sucesso!!');
 
+    }
+
+    #[On('iconId')]
+    public function selectIcon($id){
+        $this->icon = $id['id'];
+    }
+
+    public function iconClass(){
+        $iconClass = Icon::find($this->icon);
+        return $iconClass->class;
     }
 }
