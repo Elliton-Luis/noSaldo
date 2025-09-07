@@ -16,7 +16,7 @@ return new class extends Migration
             $table->decimal('current_amount', 13, 2)->default(0);
             $table->enum('status', ['active', 'finished'])->default('active');
             $table->date('deadline');
-            $table->tinyInteger('priority');
+            $table->tinyInteger('priority')->default(1);
             $table->foreignId('icon_id')->nullable()->constrained('icons');
             $table->timestamps();
         });
