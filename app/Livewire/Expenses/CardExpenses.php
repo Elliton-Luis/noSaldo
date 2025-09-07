@@ -5,6 +5,9 @@ namespace App\Livewire\Expenses;
 use Livewire\Component;
 use App\Models\Expense;
 
+use Livewire\Attributes\On;
+
+
 class CardExpenses extends Component
 {
     public function render()
@@ -13,6 +16,7 @@ class CardExpenses extends Component
         return view('livewire.expenses.card-expenses',['expenses'=>$expenses]);
     }
 
+    #[On('storeExpense')]
     public function getExpenses(){
         $query = Expense::query();
         $query->where('user_id',auth()->user()->id);

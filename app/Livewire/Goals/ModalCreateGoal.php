@@ -58,6 +58,7 @@ class ModalCreateGoal extends Component
             'icon_id'=>$this->icon
         ]);
 
+        $this->reset();
         $this->dispatch('goalCreated');
         return session()->flash('successGoal','Meta Cadastrada Com Sucesso!!');
 
@@ -69,7 +70,6 @@ class ModalCreateGoal extends Component
     }
 
     public function iconClass(){
-        $iconClass = Icon::find($this->icon);
-        return $iconClass->class;
+        return Icon::find($this->icon)?->class ?? 'question-circle';
     }
 }
