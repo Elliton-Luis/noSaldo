@@ -6,6 +6,8 @@ use Livewire\Component;
 
 use App\Models\Income;
 
+use Livewire\Attributes\On;
+
 class CardIncomes extends Component
 {
 
@@ -15,6 +17,7 @@ class CardIncomes extends Component
         return view('livewire.incomes.card-incomes',['incomes'=>$incomes]);
     }
 
+    #[On('storeIncome')]
     public function getIncomes(){
         $query = Income::query();
         $query->where('user_id',auth()->user()->id);
