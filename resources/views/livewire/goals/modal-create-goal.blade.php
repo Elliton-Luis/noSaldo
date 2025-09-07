@@ -19,7 +19,7 @@
                     <i class="bi bi-gem text-amber-400 text-5xl"></i>
                 </div>
                 <button type="button"
-                    class="px-4 py-2 bg-stone-700 hover:bg-stone-600 text-stone-200 text-sm font-semibold rounded-md transition-colors">
+                    class="px-4 py-2 bg-stone-700 hover:bg-stone-600 text-stone-200 text-sm font-semibold rounded-md transition-colors" onClick="icon_modal.showModal()">
                     Escolher Ícone
                 </button>
             </div>
@@ -89,4 +89,5 @@
             </form>
         </div>
     </dialog>
+    <livewire:goals.select-icon-modal/>
 </div>

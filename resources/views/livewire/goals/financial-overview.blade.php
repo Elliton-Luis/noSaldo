@@ -1,4 +1,4 @@
-<div class="w-full bg-stone-950 p-4 font-sans">
+<div class="w-full bg-stone-950 p-4 font-sans mt-14 lg:mt-4">
     <div class="w-full max-w-4xl mx-auto">
 
         <div class="w-full bg-stone-900 rounded-2xl shadow-lg border border-stone-800 p-6 sm:p-8">
@@ -43,35 +43,39 @@
 
                         <div class="flex-grow w-full">
                             <div class="flex justify-between items-center mb-1">
-                                <h3 class="text-lg font-semibold text-stone-200">{{$goal->name}}</h3>
+                                <h3 class="text-lg font-semibold text-stone-200 truncate" title="{{$goal->name}}">{{$goal->name}}</h3>
                                 @php
                                     $percentage = ($goal->total_amount > 0) ? ($goal->current_amount / $goal->total_amount) * 100 : 0;
                                 @endphp
-                                <span class="text-sm font-medium text-amber-400">{{ number_format($percentage, 0) }}%</span>
+                                <span class="text-sm font-medium text-amber-400 flex-shrink-0 ml-2">{{ number_format($percentage, 0) }}%</span>
                             </div>
                             <div class="w-full bg-stone-700 rounded-full h-2.5">
                                 <div class="bg-amber-400 h-2.5 rounded-full" style="width: {{ $percentage }}%"></div>
                             </div>
                         </div>
 
-                        <div class="w-full sm:w-auto flex flex-row items-center justify-between sm:justify-end gap-4 mt-2 sm:mt-0">
+                        <div class="flex-shrink-0 w-full sm:w-64">
+                             <div class="flex items-center justify-between mt-2 sm:mt-0">
+                                <div class="text-left">
+                                    <p class="font-bold text-lg text-stone-200">{{number_format($goal->current_amount, 2, ',', '.') }} R$</p>
+                                    <p class="text-sm text-stone-400">de {{number_format($goal->total_amount, 2, ',', '.')}} R$</p>
+                                </div>
 
-                            <div class="text-left sm:text-right flex-shrink-0">
-                                <p class="font-bold text-lg text-stone-200">{{number_format($goal->current_amount, 2, ',', '.') }} R$ </p>
-                                <p class="text-sm text-stone-400">de {{number_format($goal->total_amount, 2, ',', '.')}} R$ </p>
+                                <div class="flex items-center gap-2">
+                                    <button title="Adicionar Dinheiro" class="w-10 h-10 flex items-center justify-center bg-stone-700 hover:bg-stone-600 text-stone-300 rounded-lg transition-colors"
+                                            onclick="add_money_modal.showModal({{$goal->id}})">
+                                        <i class="bi bi-plus-circle-fill text-xl"></i>
+                                    </button>
+                                    <button title="Editar Meta" class="w-10 h-10 flex items-center justify-center bg-stone-700 hover:bg-stone-600 text-stone-300 rounded-lg transition-colors"
+                                            onclick="edit_goal_modal.showModal({{$goal->id}})">
+                                        <i class="bi bi-pencil-square text-lg"></i>
+                                    </button>
+                                    <button title="Excluir Meta" class="w-10 h-10 flex items-center justify-center bg-stone-700 hover:bg-red-800/80 text-stone-300 hover:text-white rounded-lg transition-colors"
+                                            onclick="delete_goal_modal.showModal({{$goal->id}})">
+                                        <i class="bi bi-trash3-fill text-lg"></i>
+                                    </button>
+                                </div>
                             </div>
-
-                            <div class="flex items-center gap-2">
-                                <button title="Adicionar Dinheiro" class="w-10 h-10 flex items-center justify-center bg-stone-700 hover:bg-stone-600 text-stone-300 rounded-lg transition-colors"
-                                        onclick="add_money_modal.showModal({{$goal->id}})">
-                                    <i class="bi bi-plus-circle-fill text-xl"></i>
-                                </button>
-                                <button title="Editar Meta" class="w-10 h-10 flex items-center justify-center bg-stone-700 hover:bg-stone-600 text-stone-300 rounded-lg transition-colors"
-                                        onclick="edit_goal_modal.showModal({{$goal->id}})">
-                                    <i class="bi bi-pencil-square text-lg"></i>
-                                </button>
-                            </div>
-
                         </div>
                     </div>
 
