@@ -1,44 +1,43 @@
-# 👌 Livewire With DaisyUI
+# NoSaldo
 
-**Livewire With DaisyUI** Repository designed so that you don't have to waste time confirming Livewire, DaisyUI and TailwindCss.
+NoSaldo é uma aplicação web para controle financeiro pessoal, permitindo que o usuário registre ganhos, gastos, metas de economia e itens desejados, com análises inteligentes sobre a saúde financeira. O projeto é construído com Laravel no backend e utiliza Livewire para interatividade dinâmica.
 
-## ⚙️ Instalação
+### Funcionalidades
 
-1. Clone the repository:
+- Cadastro e gerenciamento de Receitas e Despesas.
 
-```bash
-git clone https://github.com/MutoLucas/livewire_with_daisyUi.git project
-cd project
-```
+- Controle de Metas financeiras com:
 
-2. Install the dependencies:
+- Nome da meta
 
-```bash
-composer install
-npm install && npm run build
-```
+- Valor total e valor guardado
 
-3. Configure `.env`:
+- Prioridade e status
 
-```bash
-cp .env.example .env
-php artisan key:generate
-```
+- Data limite (deadline)
 
-4. Configure the database and run the migrations:
+- Ícone representativo
 
-```bash
-php artisan migrate
-```
+- Registro de Itens desejados, permitindo que o sistema indique se o usuário consegue comprar com base no saldo disponível.
 
-5. Start the server:
+- Sistema de análise de saldo com cálculo de dinheiro real: receitas menos despesas.
 
-```bash
-composer run devrun
-```
+- Interface interativa com Livewire, incluindo sliders, inputs com validação e filtros visuais.
 
-## 🤝 Contribution
+- Personalização de ícones e cores das metas.
 
-Feel free to open issues or pull requests. All contributions are welcome!
+### Tecnologias Utilizadas
 
----
+PHP 8.x e Laravel 10.x
+
+Livewire para interatividade em tempo real
+
+Tailwind CSS para design responsivo e moderno
+
+Bootstrap Icons / Heroicons para representação visual de metas
+
+MySQL / MariaDB para banco de dados
+
+### Como Usar
+
+Clone o repositório:
