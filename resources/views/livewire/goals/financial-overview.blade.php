@@ -15,15 +15,15 @@
             <section>
                 <div class="flex flex-wrap gap-2 justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-stone-100">Suas Metas</h2>
-                    <button class="px-4 py-2 text-sm bg-amber-400 hover:bg-amber-500 border-none text-stone-900 font-bold rounded-md transition-colors">
+                    <button class="px-4 py-2 text-sm bg-amber-400 hover:bg-amber-500 border-none text-stone-900 font-bold rounded-md transition-colors" onclick="goal_modal.showModal()">
                         + Nova Meta
                     </button>
                 </div>
 
                 <div class="space-y-4">
                     @php
-                            $arr = [1,2,3,4]
-                        @endphp
+                        $arr = [1,2,3,4]
+                    @endphp
                     @foreach ($arr as $a)
 
                     <div class="w-full bg-stone-800 rounded-xl shadow-sm hover:shadow-md border border-stone-700 p-4 transition-all duration-300
@@ -54,7 +54,7 @@
                     @endforeach
                 </div>
             </section>
-
+            <livewire:goals.modal-create-goal/>
         </div>
     </div>
 </div>
