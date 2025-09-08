@@ -11,7 +11,7 @@
                     </div>
                     <div class="text-right">
                         <p class="text-stone-400 text-sm">Saldo Atual</p>
-                        <h2 class="text-2xl font-bold text-emerald-400">R$ {{ number_format($totalBalance ?? 0, 2, ',', '.') }}</h2>
+                        <h2 class="text-2xl font-bold text-{{$totalBalance > 0 ? 'emerald' : 'red'}}-500">R$ {{ number_format($totalBalance ?? 0, 2, ',', '.') }}</h2>
                     </div>
                 </div>
 
@@ -63,15 +63,14 @@
 
                                 <div class="flex items-center gap-2">
                                     <button title="Adicionar Dinheiro" class="w-10 h-10 flex items-center justify-center bg-stone-700 hover:bg-stone-600 text-stone-300 rounded-lg transition-colors"
-                                            onclick="add_money_modal.showModal({{$goal->id}})">
+                                            onclick="add_money.showModal()">
                                         <i class="bi bi-plus-circle-fill text-xl"></i>
                                     </button>
                                     <button title="Editar Meta" class="w-10 h-10 flex items-center justify-center bg-stone-700 hover:bg-stone-600 text-stone-300 rounded-lg transition-colors"
-                                            onclick="edit_goal_modal.showModal({{$goal->id}})">
+                                            onclick="edit_goal_modal.showModal()">
                                         <i class="bi bi-pencil-square text-lg"></i>
                                     </button>
-                                    <button title="Excluir Meta" class="w-10 h-10 flex items-center justify-center bg-stone-700 hover:bg-red-800/80 text-stone-300 hover:text-white rounded-lg transition-colors"
-                                            onclick="delete_goal_modal.showModal({{$goal->id}})">
+                                    <button title="Excluir Meta" class="w-10 h-10 flex items-center justify-center bg-stone-700 hover:bg-red-800/80 text-stone-300 hover:text-white rounded-lg transition-colors">
                                         <i class="bi bi-trash3-fill text-lg"></i>
                                     </button>
                                 </div>
@@ -88,7 +87,7 @@
             </section>
 
             <livewire:goals.modal-create-goal />
-            {{-- <livewire:goals.modal-add-money /> --}}
+            <livewire:goals.modal-add-money />
             {{-- <livewire:goals.modal-edit-goal /> --}}
         </div>
     </div>
