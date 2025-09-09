@@ -23,7 +23,7 @@ class FinancialOverview extends Component
         $totalBalance = $this->getBalance();
         return view('livewire.goals.financial-overview',['goals'=>$goals,'totalBalance'=>$totalBalance]);
     }
-    #[On('goalCreated')]
+    #[On('goalChange')]
     public function getGoals(){
         $query = Goal::query();
         return $query->where('user_id',$this->user)->paginate(10);

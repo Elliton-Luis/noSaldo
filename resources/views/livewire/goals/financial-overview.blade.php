@@ -46,11 +46,12 @@
                                 <h3 class="text-lg font-semibold text-stone-200 truncate" title="{{$goal->name}}">{{$goal->name}}</h3>
                                 @php
                                     $percentage = ($goal->total_amount > 0) ? ($goal->current_amount / $goal->total_amount) * 100 : 0;
+                                    $bgColor = $percentage < 40 ? 'bg-red-500' : ($percentage < 80 ? 'bg-amber-400' : 'bg-emerald-500');
                                 @endphp
                                 <span class="text-sm font-medium text-amber-400 flex-shrink-0 ml-2">{{ number_format($percentage, 0) }}%</span>
                             </div>
                             <div class="w-full bg-stone-700 rounded-full h-2.5">
-                                <div class="bg-amber-400 h-2.5 rounded-full" style="width: {{ $percentage }}%"></div>
+                                <div class="{{$bgColor}} h-2.5 rounded-full" style="width: {{ $percentage }}%"></div>
                             </div>
                         </div>
 
@@ -63,7 +64,7 @@
 
                                 <div class="flex items-center gap-2">
                                     <button title="Adicionar Dinheiro" class="w-10 h-10 flex items-center justify-center bg-stone-700 hover:bg-stone-600 text-stone-300 rounded-lg transition-colors"
-                                            onclick="add_money.showModal()">
+                                            onclick="add_money_{{$goal->id}}.showModal()">
                                         <i class="bi bi-plus-circle-fill text-xl"></i>
                                     </button>
                                     <button title="Editar Meta" class="w-10 h-10 flex items-center justify-center bg-stone-700 hover:bg-stone-600 text-stone-300 rounded-lg transition-colors"
@@ -77,6 +78,7 @@
                             </div>
                         </div>
                     </div>
+                    <livewire:goals.modal-add-money :key="$goal->id" :goalId="$goal->id" />
 
                     @empty
                     <div class="w-full bg-stone-800 rounded-xl border border-stone-700 p-8 text-center">
@@ -87,7 +89,6 @@
             </section>
 
             <livewire:goals.modal-create-goal />
-            <livewire:goals.modal-add-money />
             {{-- <livewire:goals.modal-edit-goal /> --}}
         </div>
     </div>

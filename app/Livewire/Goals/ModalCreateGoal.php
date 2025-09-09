@@ -59,7 +59,7 @@ class ModalCreateGoal extends Component
         ]);
 
         $this->reset();
-        $this->dispatch('goalCreated');
+        $this->dispatch('goalChange');
         return session()->flash('successGoal','Meta Cadastrada Com Sucesso!!');
 
     }
