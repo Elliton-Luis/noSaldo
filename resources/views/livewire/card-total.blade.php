@@ -1,6 +1,10 @@
 <div
     class="w-120 h-auto rounded-2xl bg-stone-900/50 p-6 shadow-2xl shadow-stone-950/40
             border border-stone-800/40 backdrop-blur-sm mt-16 md:mt-0">
+
+            <div id="app">
+                <First></First>
+            </div>
     <div class="flex items-center gap-3 mb-6">
         <div class="p-2 bg-stone-800/50 border border-stone-700/60 rounded-lg">
             <svg class="h-6 w-6 text-stone-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
